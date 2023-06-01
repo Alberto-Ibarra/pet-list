@@ -1,0 +1,16 @@
+<form>
+    <input type="text" placeholder="name" [(ngModel)]="name" name="name"/><br/>
+    <input type="text" placeholder="breed" [(ngModel)]="breed" name="breed"/><br/>
+    <input type="number" placeholder="age" [(ngModel)]="age" name="age"/><br/>
+    <p>Agressive?</p>
+    <input type="radio" name="aggressive" value="yes" [(ngModel)]="isAggressive"/> yes
+    <input type="radio" name="aggressive" value="no" [(ngModel)]="isAggressive"/> no <br/>
+    <button (click)="handleClick()">Enter Pet</button>
+</form>
+
+<div *ngFor="let pet of petService.petList">
+    <h2>{{pet.name}}</h2>
+    <h3>{{pet.breed}}</h3>
+    <p>{{pet.age}}</p>
+    <p>{{pet.isAggressive ? "Yes": "No"}}</p>
+</div>
